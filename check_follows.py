@@ -23,7 +23,7 @@ old_count = file_.read(10)
 if int(followers) > int(old_count):
 	print "New Follower!"
 	pygame.mixer.init()
-	pygame.mixer.music.load("dove.mp3")
+	pygame.mixer.music.load("yay.mp3")
 	pygame.mixer.music.play()
 	while pygame.mixer.music.get_busy() == True:
 		continue
