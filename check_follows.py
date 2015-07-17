@@ -35,7 +35,10 @@ if os.path.isfile('followers/' + username + '.txt') is False:
 	newusername = True
 
 # Open up a file for caching the username's followers
-file_ = open('followers/' + username + '.txt', 'w+')
+if newusername == True:
+	file_ = open('followers/' + username + '.txt', 'w')
+else:
+	file_ = open('followers/' + username + '.txt', 'r+')
 
 # How many followers did we have the last time we checked?
 if newusername == True:
