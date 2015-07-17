@@ -55,7 +55,7 @@ if int(followers) > int(old_count):
 	print "New Follower!"
 	# Play the including mp3 file
 	pygame.mixer.init()
-	pygame.mixer.music.load("yay.mp3")
+	pygame.mixer.music.load(os.path.dirname(os.path.abspath(__file__)) + "yay.mp3")
 	pygame.mixer.music.play()
 	while pygame.mixer.music.get_busy() == True:
 		continue
