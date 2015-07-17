@@ -1,5 +1,6 @@
 # Import all of the necessary modules
 import os
+import os.path
 import sys
 import tweepy
 import pygame
@@ -14,10 +15,13 @@ api = tweepy.API(auth)
 
 # Making sure we have entered a username argument
 try:
-	username = sys.argv[0]
+	username = sys.argv[1]
 except Exception:
 	print "Don't forget to supply a username!"
 	exit(0)
+
+# print username
+# exit(0)
 
 # Tweepy calls the get_user Twitter API call
 me = api.get_user(username);
@@ -25,11 +29,19 @@ me = api.get_user(username);
 # This is the number of our followers (in string form)
 followers = me.followers_count
 
+newusername = False
+
+if os.path.isfile('followers/' + username + '.txt') is False:
+	newusername = True
+
 # Open up a file for caching the username's followers
-file_ = open('followers/' + username + '.txt', 'r+')
+file_ = open('followers/' + username + '.txt', 'w+')
 
 # How many followers did we have the last time we checked?
-old_count = file_.read(10)
+if newusername == True:
+	old_count = "0"
+else:
+	old_count = file_.read(10)
 
 # If we have more followers:
 if int(followers) > int(old_count):
