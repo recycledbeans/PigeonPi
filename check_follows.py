@@ -13,7 +13,7 @@ auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth)
 
 # Making sure we have entered a username argument
-try
+try:
 	username = sys.argv[0]
 except Exception:
 	print "Don't forget to supply a username!"
