@@ -19,7 +19,7 @@ me = api.get_user(username);
 
 followers = me.followers_count
 
-file_ = open('current_followers.txt', 'r+')
+file_ = open('followers/' + username + '.txt', 'r+')
 
 old_count = file_.read(10)
 
