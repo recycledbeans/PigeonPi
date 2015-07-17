@@ -2,7 +2,6 @@
 
 # Import all of the necessary modules
 import os
-import os.path
 import sys
 import tweepy
 import pygame
@@ -33,14 +32,16 @@ followers = me.followers_count
 
 newusername = False
 
-if os.path.isfile('followers/' + username + '.txt') is False:
+file_name = os.path.dirname(os.path.abspath(__file__)) + 'followers/' + username + '.txt';
+
+if os.path.isfile(file_name) is False:
 	newusername = True
 
 # Open up a file for caching the username's followers
 if newusername == True:
-	file_ = open('followers/' + username + '.txt', 'w')
+	file_ = open(file_name, 'w')
 else:
-	file_ = open('followers/' + username + '.txt', 'r+')
+	file_ = open(file_name, 'r+')
 
 # How many followers did we have the last time we checked?
 if newusername == True:
