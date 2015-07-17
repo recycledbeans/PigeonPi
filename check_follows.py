@@ -1,11 +1,8 @@
 import tweepy
 import os
 import pygame
-
-consumer_key = 'ENTERYOURCONSUMERKEY'
-consumer_secret = 'ENTERYOURCONSUMERSECRET'
-access_token = 'ENTERYOURACCESSTOKEN'
-access_token_secret = 'ENTERYOURACCESSTOKENSECRET'
+import credentials
+import sys
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
