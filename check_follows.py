@@ -3,7 +3,7 @@ import os
 import sys
 import tweepy
 import pygame
-import credentials # <---- Be sure to put your Twitter application's credentials here
+from credentials import * # <---- Be sure to put your Twitter application's credentials here
 
 # Tweepy OAuth (Authentication)
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
