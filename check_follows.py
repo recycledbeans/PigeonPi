@@ -9,7 +9,13 @@ auth.set_access_token(access_token, access_token_secret)
 
 api = tweepy.API(auth)
 
-me = api.get_user('@recycledbeans');
+try
+	username = sys.argv[0]
+except Exception:
+	print "Don't forget to supply a username!"
+	exit(0)
+
+me = api.get_user(username);
 
 followers = me.followers_count
 
