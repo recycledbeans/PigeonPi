@@ -32,7 +32,7 @@ followers = me.followers_count
 
 newusername = False
 
-file_name = os.path.dirname(os.path.abspath(__file__)) + 'followers/' + username + '.txt';
+file_name = os.path.dirname(os.path.abspath(__file__)) + '/followers/' + username + '.txt';
 
 if os.path.isfile(file_name) is False:
 	newusername = True
